@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document O M</title>
+</head>
+<body style="background-color: lightblue; text-align: center; font-family: Arial, sans-serif; color:black">
+    <h1 style="color: darkblue;">Welcome to the Document O M</h1>
+    <p style="font-size: 20px;">This is a simple HTML document with some inline styles.</p>
+    <p style="font-size: 18px;">You can add more content here as needed.</p>
+    <a href="three.html" style="color: white; background-color: darkblue; padding: 10px; text-decoration: none;">Go to Five</a>
+    
+    <ul class="language">
+        <li>JavaScript</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Python</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(language){
+        var li = document.createElement('li');
+        li.innerHTML=`${language}`;
+        document.querySelector('.language').appendChild(li);
+        
+    }
+    addLanguage('Java');
+    addLanguage('C++');
+    addLanguage('C#');
+
+    function addOptiLang(language){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(language));
+        document.querySelector('.language').appendChild(li);
+    }
+    addOptiLang('Ruby');
+    addOptiLang('PHP');
+    //edit
+    function editLanguage(oldLanguage, newLanguage) {
+        const listItems = document.querySelectorAll('.language li');
+        listItems.forEach(item => {
+            if (item.textContent === oldLanguage) {
+                item.textContent = newLanguage;
+            }
+        });
+    }
+    editLanguage('Java', 'JavaScript');
+</script>
+</html>
